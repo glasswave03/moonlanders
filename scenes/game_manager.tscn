@@ -1,14 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://duvtra2262l0a"]
+[gd_scene load_steps=4 format=3 uid="uid://duvtra2262l0a"]
 
 [ext_resource type="Script" uid="uid://5i50ce04nf5k" path="res://scripts/game_manager.gd" id="1_hwd4i"]
+[ext_resource type="PackedScene" uid="uid://bed67halotudg" path="res://scenes/menu_background.tscn" id="2_udu3i"]
+[ext_resource type="PackedScene" uid="uid://cpmlts608xwu" path="res://scenes/menu_ui.tscn" id="3_oo155"]
 
-[node name="GameManager" type="Node"]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("gui", "world")]
 script = ExtResource("1_hwd4i")
+gui = NodePath("GUI")
+world = NodePath("World")
 
 [node name="World" type="Node2D" parent="."]
+
+[node name="MenuBackground" parent="World" instance=ExtResource("2_udu3i")]
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="MenuUI" parent="GUI" instance=ExtResource("3_oo155")]
+layout_mode = 1

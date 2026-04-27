@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bed67halotudg"]
+
+[ext_resource type="Texture2D" uid="uid://c3mdeeany73e7" path="res://icon.svg" id="1_m27td"]
+
+[node name="MenuBackground" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.39215687)
+scale = Vector2(2.234375, 1.3281251)
+texture = ExtResource("1_m27td")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
